@@ -29,7 +29,7 @@ let
     // TODO Promote to index?
 
 
-    //__________FILTERS____GOAL: Filter by records in POS_which alreay has been filtered by parameters_______
+    //__________FILTERS____GOAL: Filter by records in POS_Summary which alreay has been filtered by parameters_______
         
     //********1st Method******** Use an inner join to POS_Summary, Dont like that it basically adds a column of tables
     // TODO try Table.buffer here
@@ -38,35 +38,22 @@ let
     // #"Join only key" = Table.ExpandTableColumn(#"Filter by inner join to POS_Summary", "POS_Summary", {"Key_Cust_Doc"}, {"Key_Cust_Doc"}),
 
     //********2nd Method, Using List.Contains on a list of Keys from POS_Summary (THIS SEEMS FAST (After adding buffer)
+	// Create a list of the keys in POS_Summary
     summary_keys_list = List.Buffer(POS_Summary_Load[Key_Cust_Doc]),
+	// Use List.Contains to filter the POS_Detail Table
     #"Filter with POS_Summary Key List" = Table.SelectRows(#"Insert Key_Cust_Doc", each List.Contains(summary_keys_list,[Key_Cust_Doc])),
 
 
-/*  ******** LAST RESORT***** Just filter using parameters identical to POS_Summary but two places in code to maintain the same thing, Although probably good for performance without extra call to POS Summary.
+/*  ******** LAST RESORT***** 
+	// Just filter using parameters identical to POS_Summary but maintain same code in two places,
+	Although probably good for performance without extra call to POS Summary.
+	Possibly turn filter into function to be called by both
     // Filter on Date Posted to be >= the Parameter date_year_posted_Start and include open documents
-    #"Filter Dates" = Table.SelectRows(#"Join only key", each 
-        Date.Year([Date Posted])>=date_year_posted_start
-        or [Date Posted] = "null"
-        or  [Date Posted] = null),
     // Filter Document Division by parameter doc_division
-    #"Filter Doc Division" = if doc_division = "All" 
-        then #"Filter Dates"
-        else Table.SelectRows(#"Filter Dates", each ([Division] = doc_division)),
     // Filter Document Code by parameter doc_code
-    #"Filter Doc Code" =  if doc_code = "All"
-        then #"Filter Doc Division"
-        else Table.SelectRows(#"Filter Doc Division", each ([Document Code] = doc_division)),
     // Filter Document Type by parameter doc_type
-    #"Filter Doc Type" = if doc_type = "All"
-        then #"Filter Doc Code"
-        else Table.SelectRows(#"Filter Doc Code", each ([#"Document Type (W/S/Q)"] = "W")),
     // Filter Document Status by parameter doc_status
-    #"Filter Doc Staus" = if doc_status = "Open" 
-        then Table.SelectRows(#"Filter Doc Type", each ([#"Document Status (O/R/C/k=Cancelled)"] = "O" or [#"Document Status (O/R/C/k=Cancelled)"] = "R"))
-        else if doc_status = "Closed"
-             then Table.SelectRows(#"Filter Doc Type", each ([#"Document Status (O/R/C/k=Cancelled)"] = "C" or [#"Document Status (O/R/C/k=Cancelled)"] = "k"))
-             else #"Filter Dates",
-*/
+ */
     #"Removed Columns" = Table.RemoveColumns( #"Filter with POS_Summary Key List",{"Content", "Name", "Extension", "Date accessed", "Date modified", "Date created", "Attributes", "Folder Path"})
 
 in
