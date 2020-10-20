@@ -19,6 +19,14 @@ Many reports will need the same high level filters applied to all Pivots globall
 
 
 
+# Imporant
+
+Files must contain "" in path name for code to be reusable
+
+
+
+
+
 
 
 # Version History
