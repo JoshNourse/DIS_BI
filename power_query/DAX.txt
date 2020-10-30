@@ -1,0 +1,164 @@
+
+
+Feedback Type:
+Frown (Error)
+
+Error Message:
+Object reference not set to an instance of an object.
+
+Stack Trace:
+   at Microsoft.PowerBI.Client.Windows.Storage.ExcelImporter.<>c__DisplayClass17_0.<SyncQueryAndTableNames>b__0(ITable t)
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Microsoft.PowerBI.Client.Windows.Storage.ExcelImporter.SyncQueryAndTableNames(Report newReport)
+   at Microsoft.PowerBI.Client.Windows.Storage.ExcelImporter.UpdateConnectionStrings(IAnalysisServicesService analysisServices, String globalPipeName, ImportFromExcelSummary resultSummary, String newDatabaseName, List`1 listNonMQueries, CancellationToken cancellationToken, IProgress`1 progressHandler, List`1 deletedQueries, Report newReport)
+   at Microsoft.PowerBI.Client.Windows.Storage.ExcelImporter.TryCreateReport(CancellationToken cancellationToken, IProgress`1 progressHandler, Stream fileStream, Dictionary`2 linkedTableMapping, IImportFromExcelHost host, Dictionary`2 sharedStrings, Report& newReport, ImportFromExcelError& error, ImportFromExcelSummary& resultSummary, PackageValidationResult& validationResult, Boolean& tryImportEmbedded)
+   at Microsoft.PowerBI.Client.Windows.Storage.ExcelImporter.<>c__DisplayClass6_0.<CreateReportAsync>b__0()
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.PowerBI.Client.Windows.FloatingDialog.ImportFromExcelDialog.<<StartImport>b__24_0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.PowerBI.Client.Windows.IExceptionHandlerExtensions.<HandleAwaitableAsyncExceptions>d__1.MoveNext()
+
+Stack Trace Message:
+Object reference not set to an instance of an object.
+
+Invocation Stack Trace:
+   at Microsoft.Mashup.Host.Document.ExceptionExtensions.GetCurrentInvocationStackTrace()
+   at Microsoft.Mashup.Client.UI.Shared.StackTraceInfo..ctor(String exceptionStackTrace, String invocationStackTrace, String exceptionMessage)
+   at Microsoft.PowerBI.Client.Windows.Telemetry.PowerBIUserFeedbackServices.GetStackTraceInfo(Exception e)
+   at Microsoft.PowerBI.Client.Windows.Telemetry.PowerBIUserFeedbackServices.ReportException(IWindowHandle activeWindow, IUIHost uiHost, FeedbackPackageInfo feedbackPackageInfo, Exception e, Boolean useGDICapture)
+   at Microsoft.Mashup.Client.UI.Shared.UnexpectedExceptionHandler.<>c__DisplayClass15_0.<HandleException>b__0()
+   at Microsoft.Mashup.Client.UI.Shared.UnexpectedExceptionHandler.HandleException(Exception e)
+   at Microsoft.PowerBI.Client.Windows.IExceptionHandlerExtensions.<HandleAwaitableAsyncExceptions>d__1.MoveNext()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.FinishContinuations()
+   at System.Threading.Tasks.Task.Finish(Boolean bUserDelegateExecuted)
+   at System.Threading.Tasks.Task`1.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception)
+   at Microsoft.PowerBI.Client.Windows.FloatingDialog.ImportFromExcelDialog.<<StartImport>b__24_0>d.MoveNext()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run()
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at Microsoft.Mashup.Client.UI.Windows.DialogWindowBase.ShowModal(IWindowHandle windowHandle)
+   at Microsoft.Mashup.Client.UI.Shared.WebDialogs.WebDialog.<>n__0(IWindowHandle owner)
+   at Microsoft.Mashup.Client.UI.Shared.WindowManager.ShowModal[T](T dialog, Func`1 showModalFunction)
+   at Microsoft.PowerBI.Client.Windows.MainWindow.ImportFromExcelFile(String filePath)
+   at Microsoft.PowerBI.Client.Windows.MainWindow.<<Microsoft-PowerBI-Client-Windows-Services-IImportHandler-ImportFromExcel>b__93_0>d.MoveNext()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.FinishContinuations()
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(TResult result)
+   at Microsoft.PowerBI.Client.Windows.Services.ReportManager.<IsReportDirty>d__25.MoveNext()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.FinishContinuations()
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(TResult result)
+   at Microsoft.PowerBI.Client.Windows.CefSharpFramework.CefWebBrowserBase.<InvokeScriptAsync>d__23`1.MoveNext()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run()
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at Microsoft.Mashup.Client.UI.Shared.WindowManager.ShowModal[T](T dialog, Func`1 showModalFunction)
+   at Microsoft.PowerBI.Client.Program.<>c__DisplayClass4_0.<Main>b__1()
+   at Microsoft.PowerBI.Client.Windows.IExceptionHandlerExtensions.<>c__DisplayClass3_0.<HandleExceptionsWithNestedTasks>b__0()
+   at Microsoft.Mashup.Host.Document.ExceptionHandlerExtensions.HandleExceptions(IExceptionHandler exceptionHandler, Action action)
+   at Microsoft.PowerBI.Client.Program.Main(String[] args)
+
+
+PowerBINonFatalError:
+{"AppName":"PBIDesktop","AppVersion":"2.86.727.0","ModuleName":"Microsoft.PowerBI.Client.Windows.dll","Component":"Microsoft.PowerBI.Client.Windows.Storage.ExcelImporter+<>c__DisplayClass17_0","Error":"System.NullReferenceException","MethodDef":"<SyncQueryAndTableNames>b__0","ErrorOffset":"0"}
+
+Snapshot Trace Logs:
+C:\Users\Joshu\Microsoft\Power BI Desktop Store App\FrownSnapShot1546197378.zip
+
+Model Default Mode:
+Empty
+
+Model Version:
+PowerBI_V1
+
+Is Report V3 Models Enabled:
+True
+
+Performance Trace Logs:
+C:\Users\Joshu\Microsoft\Power BI Desktop Store App\PerformanceTraces.zip
+
+Enabled Preview Features:
+PBI_NewWebTableInference
+PBI_v3ModelsPreview
+
+Disabled Preview Features:
+PBI_shapeMapVisualEnabled
+PBI_SpanishLinguisticsEnabled
+PBI_JsonTableInference
+PBI_ImportTextByExample
+PBI_ExcelTableInference
+PBI_qnaLiveConnect
+PBI_dataSearchCuration
+PBI_azureMapVisual
+PBI_dataPointLassoSelect
+PBI_narrativeTextBox
+PBI_dynamicParameters
+
+Disabled DirectQuery Options:
+TreatHanaAsRelationalSource
+
+Cloud:
+GlobalCloud
+
+PowerBIUserFeedbackServices_IsReported:
+True
+
+Formulas:
+
+
+section Section1;

@@ -18,4 +18,4 @@ let
     // Remove all but key and note
     #"Removed Columns" = Table.RemoveColumns(#"Extracted Values",{"Detail: Line Sales code Description", "Note Concat Table"})
 in
-    #"Removed Columns"
+    #"Removed Columns""
